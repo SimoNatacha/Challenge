@@ -1,0 +1,101 @@
+@import "./colors.scss";
+
+.event {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "date info info venu""date btn btn btn";
+    padding: 1em 0;
+    border-bottom: 1px solid $border-color;
+
+    .event-date {
+        width: 20%;
+
+        h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
+
+    .event-info {
+        grid-area: info;
+    }
+
+    .event-venu {
+        grid-area: venu;
+
+        .event-time {
+            width: fit-content;
+            margin-left: auto;
+        }
+
+        .event-loc {
+            text-align: right;
+        }
+    }
+
+    .event-details {
+        grid-area: btn;
+
+        button {
+            padding: 0.5em 0;
+            background-color: unset;
+            color: $primary-color;
+            border: 0;
+            font-size: 14px;
+
+            &:hover {
+                cursor: pointer;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .event-info,
+    .event-venu {
+        padding-right: 1.3em;
+
+        .event-name,
+        .event-time {
+            border-bottom: 1px solid $border-color;
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+
+        .event-desc,
+        .event-loc {
+            overflow: hidden;
+            width: 100%;
+            font-size: 15px;
+            color: $desc-color;
+            line-height: 1.5em;
+        }
+    }
+}
+
+/*-----------------------RESPONSIVENESS--------------------*/
+
+@media (max-width: 443px) {
+    .event {
+        display: block;
+
+        .event-desc {
+            display: none !important;
+        }
+
+        .event-date {
+            width: fit-content;
+        }
+
+        .event-venu {
+
+            .event-time,
+            .event-loc {
+                margin-left: inherit;
+                text-align: inherit;
+            }
+        }
+    }
+}

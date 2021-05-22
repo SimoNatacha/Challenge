@@ -1,0 +1,60 @@
+@import "./colors.scss";
+@import "./event-item.scss";
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    width: 100%;
+    background-color: $dark-bg;
+    color: $main-color;
+
+    .container {
+        width: 70%;
+        margin: auto;
+        padding: 0.3rem;
+
+        .event-title {
+            width: fit-content;
+            margin: auto;
+            color: $dark-bg;
+            background-color: white;
+
+            h2 {
+                padding: 0.3rem 0.5rem;
+                letter-spacing: 5px;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+
+        .msg-btn {
+            display: none;
+            width: fit-content;
+            background-color: $primary-color;
+            padding: 0.7em 0.7em 0.3em;
+            border-radius: 50%;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+
+            svg {
+                width: 20px;
+            }
+
+
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .msg-btn {
+        display: block !important;
+
+    }
+}
